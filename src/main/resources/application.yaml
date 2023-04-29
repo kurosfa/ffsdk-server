@@ -1,0 +1,17 @@
+server:
+  error:
+    include-binding-errors: always
+    include-message: always
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:6000/soa
+    username: admin
+    password: admin123
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mvc:
+    format:
+      date: iso
