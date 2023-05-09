@@ -17,7 +17,7 @@ import javax.persistence.*;
 @Setter
 public class RequirementEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @ManyToOne

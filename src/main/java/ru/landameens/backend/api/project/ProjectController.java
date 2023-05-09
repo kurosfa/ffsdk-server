@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.landameens.backend.domain.project.model.Project;
 import ru.landameens.backend.domain.project.services.ProjectService;
-import ru.landameens.backend.infrastructure.storage.project.entity.ProjectEntity;
 
 import javax.validation.Valid;
 
@@ -26,12 +25,12 @@ public class ProjectController {
 
     @PostMapping()
     public Project createProject(@Valid @RequestBody Project project) {
-        return projectService.createProject(ProjectEntity.fromDomain(project));
+        return projectService.createProject(project);
     }
 
     @PutMapping("/{id}")
     public Project updateProject(@Valid @RequestBody Project project) {
-        return projectService.updateProject(ProjectEntity.fromDomain(project));
+        return projectService.updateProject(project);
     }
 
     @DeleteMapping("/{id}")
